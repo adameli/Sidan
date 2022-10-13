@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "Monoton-regular";
+    src: url("Monoton-Regular.ttf");
+}
+
+body {
+    margin: 0;
+    background-image: url("images/badbunnyimage.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: auto;
+}
+
+.container {
+    padding: 70px 40px 30px 40px;
+}
+
+.outerbox {
+    background-color: rgba(0, 0, 0, 0.37);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 7vw;
+    font-family: "Monoton-regular";
+    text-shadow: 2px 3px 7px;
+    color: white;
+    margin: 0;
+    margin-bottom: 4vh;
+}
+
+nav {
+    display: flex;
+    text-align: center;
+    gap: 5px;
+}
+
+nav>div {
+    flex-grow: 1;
+    padding: 17px 20px;
+    background-color: rgba(255, 255, 255, 0.452);
+    border-radius: 10px;
+    font-size: 2vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex-basis: 100px;
+
+}
+
+nav .marked {
+    border: 1px solid white;
+    box-shadow: 1px 1px 10px white;
+    font-weight: bold;
+}
+
+.hover:hover {
+    background-color: rgba(0, 0, 0, 0.39);
+    color: white;
+    cursor: pointer;
+}

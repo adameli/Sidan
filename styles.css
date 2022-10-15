@@ -121,6 +121,7 @@ article .album_data {
     font-size: var(--font_size);
 }
 
+
 .cover .show_hover {
     object-fit: cover;
     height: 340px;
@@ -136,10 +137,10 @@ article .song_list {
 }
 
 /*side one and two*/
-.song_list>div {
-    background-color: #ffb804;
+#first_album .song_list>div {
+    background-color: #fde753;
     margin: 5px;
-    color: #e31809;
+    color: #bfadf2;
     flex: 1;
 }
 
@@ -177,37 +178,88 @@ article .anecdotes {
     font-size: var(--font_size);
     padding: 0;
     margin: 0;
-    color: #ffb804;
 
 }
 
+/* articale nr 1*/
+#first_album .anecdotes {
+    color: #fde753;
+}
+
 .anecdotes .top_right_90 {
-    background-color: #e31809;
+    background-color: #bfadf2;
     border-radius: 20px 0 20px 20px;
     padding: 40px 20px;
 }
 
 .anecdotes .two_wide {
     grid-column: 3 / span 2;
-    background-color: #e31809;
+    background-color: #bfadf2;
     border-radius: 20px 20px 20px 0;
     padding: 57px 20px;
 }
 
 .anecdotes .image {
     grid-column: 5;
-    background-color: #e31809;
+    background-color: #bfadf2;
     border-radius: 0 20px 20px 0;
+    background-image: url("images/lil\'c\(1\).jpg");
+    background-size: cover;
+
 
 }
 
 .anecdotes .bottom_right_90 {
     grid-column: 6;
-    background-color: #e31809;
+    background-color: #bfadf2;
     border-radius: 20px 20px 0 20px;
     padding: 40px 20px;
 }
 
 .anecdotes .empty {
     display: none;
+}
+
+/* article nr 2*/
+
+#second_album .song_list>div {
+    background-color: #f3dd41;
+    margin: 5px;
+    color: #c35666;
+    flex: 1;
+}
+
+#second_album .anecdotes {
+    color: #f3dd41;
+}
+
+.anecdotes .far_left {
+    grid-column: span 2;
+    background-color: #c35666;
+    border-radius: 20px 20px 20px 0;
+    padding: 42px 14px;
+}
+
+.anecdotes .top_left_90 {
+    background-color: #c35666;
+    border-radius: 0 20px 20px 20px;
+    padding: 40px 20px;
+}
+
+.anecdotes .middle {
+    grid-column: span 2;
+    border-radius: 0 20px 20px 20px;
+    padding: 57px 20px;
+
+}
+
+.anecdotes .far_right {
+    background-color: #c35666;
+    border-radius: 20px 20px 0 20px;
+    padding: 40px 20px;
+}
+
+.show_not_hover {
+    grid-column: 2;
+    grid-row: 1;
 }

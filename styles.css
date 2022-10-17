@@ -5,13 +5,15 @@
 
 body {
     margin: 0;
-    background-image: url("images/badbunnyimage.jpg");
+    background-image: url("images/bad-bunny-backgroundimage.jpg");
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    height: auto;
+
+    font-family: Arial, Helvetica, sans-serif;
     --space: 20px;
-    --font_size: 1.5vw;
+    --font_size: 1.3vw;
+    --color_anecdots_first: #f4b04a;
 }
 
 .container {
@@ -68,28 +70,24 @@ article.best {
     border: 1px solid white;
     margin: 5vh 0;
     padding: 15px;
+
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(7, 1fr);
     gap: 5px;
 }
 
-
 article .album_data {
     grid-row: 1;
-    grid-column: 1;
+    grid-column: 1 / 5;
 
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     color: white;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
+
 }
 
 /* Headings*/
-.headings {
-    grid-row: 1;
-}
-
 .headings h1 {
     font-size: 3.5vw;
     margin: 0px;
@@ -103,7 +101,6 @@ article .album_data {
 /*headings*/
 
 .Musicians {
-    grid-row: 2;
     font-size: var(--font_size);
 }
 
@@ -113,51 +110,72 @@ article .album_data {
 
 .Musicians ul {
     list-style-type: none;
-    margin-top: 0px;
+    margin-top: 3px;
 }
 
 .album_description {
-    grid-row: 3;
     font-size: var(--font_size);
 }
 
-
-.cover .show_hover {
-    object-fit: cover;
-    height: 340px;
-    border-radius: 20px 20px 0 0;
-
+/*Images*/
+.cover {
+    grid-column: 5 / 8;
+    grid-row: 1;
+    position: relative;
 }
+
+.show_hover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    border-radius: 20px 20px 0 0;
+    transition: 1s;
+}
+
+.show_hover:hover {
+    opacity: 1;
+}
+
+.show_not_hover {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+/*Images*/
+
 
 article .song_list {
     grid-row: 2;
-    grid-column: 2;
-
+    grid-column: 5 / 8;
+    gap: 5px;
     display: flex;
 }
 
 /*side one and two*/
-#first_album .song_list>div {
-    background-color: #fde753;
-    margin: 5px;
-    color: #bfadf2;
+.song_list>div {
+    background-color: #5d2f6f;
+    color: var(--color_anecdots_first);
     flex: 1;
+    padding-top: 8px;
 }
 
 .one {
     border-radius: 0 0 0 20px;
+
 }
 
 .list h2 {
     font-size: 2vw;
-    margin: 4px 0px -16px 7px;
+    margin: 4px 0px -12px 24px;
 }
 
 .list ul {
     font-size: var(--font_size);
     list-style-type: decimal;
-
-    padding-left: 20px;
 }
 
 .two {
@@ -167,51 +185,47 @@ article .song_list {
 /*side one and two*/
 
 
-article .anecdotes {
+#first_album .anecdotes {
     grid-row: 3;
-    grid-column: 1 / 3;
+    grid-column: 1 / 8;
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 5px;
     list-style-type: none;
     font-size: var(--font_size);
+    text-shadow: 0px 0px 1px;
     padding: 0;
     margin: 0;
-
+    color: #5d2f6f;
 }
 
 /* articale nr 1*/
-#first_album .anecdotes {
-    color: #fde753;
-}
-
 .anecdotes .top_right_90 {
-    background-color: #bfadf2;
+    background-color: var(--color_anecdots_first);
     border-radius: 20px 0 20px 20px;
     padding: 40px 20px;
 }
 
 .anecdotes .two_wide {
     grid-column: 3 / span 2;
-    background-color: #bfadf2;
+    background-color: var(--color_anecdots_first);
     border-radius: 20px 20px 20px 0;
     padding: 57px 20px;
 }
 
 .anecdotes .image {
     grid-column: 5;
-    background-color: #bfadf2;
+    background-color: var(--color_anecdots_first);
     border-radius: 0 20px 20px 0;
-    background-image: url("images/lil\'c\(1\).jpg");
+    background-image: url("images/lil\'c\(producer\).jpg");
     background-size: cover;
-
-
+    text-align: start;
 }
 
 .anecdotes .bottom_right_90 {
     grid-column: 6;
-    background-color: #bfadf2;
+    background-color: var(--color_anecdots_first);
     border-radius: 20px 20px 0 20px;
     padding: 40px 20px;
 }
@@ -230,6 +244,16 @@ article .anecdotes {
 }
 
 #second_album .anecdotes {
+    grid-row: 3;
+    grid-column: 1 / 8;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    list-style-type: none;
+    font-size: var(--font_size);
+    padding: 0;
+    margin: 0;
     color: #f3dd41;
 }
 
@@ -250,6 +274,8 @@ article .anecdotes {
     grid-column: span 2;
     border-radius: 0 20px 20px 20px;
     padding: 57px 20px;
+    background-image: url("images/tainy\(producer\).jpg");
+    background-size: cover;
 
 }
 
@@ -259,7 +285,7 @@ article .anecdotes {
     padding: 40px 20px;
 }
 
-.show_not_hover {
-    grid-column: 2;
-    grid-row: 1;
+
+footer {
+    color: white;
 }

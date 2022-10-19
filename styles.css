@@ -3,6 +3,16 @@
     src: url("Monoton-Regular.ttf");
 }
 
+@font-face {
+    font-family: "roboto";
+    src: url("Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: "bunge";
+    src: url("fonts/BungeeInline-Regular.ttf");
+}
+
 body {
     margin: 0;
     background-image: url("images/bad-bunny-backgroundimage.jpg");
@@ -10,10 +20,12 @@ body {
     background-attachment: fixed;
     background-size: cover;
 
-    font-family: Arial, Helvetica, sans-serif;
+
     --space: 20px;
-    --font_size: 1.3vw;
+    --font_size: 1.4vw;
+    --font-roboto: "roboto";
     --color_anecdots_first: #f4b04a;
+    --line-height: 1.4;
 }
 
 .container {
@@ -24,6 +36,8 @@ body {
     background-color: rgba(0, 0, 0, 0.37);
     border-radius: var(--space);
     padding: 10px 20px;
+    margin-bottom: 15vh;
+
 }
 
 header h1 {
@@ -47,8 +61,8 @@ nav>div {
     padding: 17px 20px;
     background-color: rgba(255, 255, 255, 0.452);
     border-radius: 10px;
-    font-size: 2vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.2vw;
+    font-family: var(--font-roboto);
     flex-basis: 100px;
 }
 
@@ -73,7 +87,8 @@ article.best {
 
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
+
+    gap: 10px;
 }
 
 article .album_data {
@@ -91,17 +106,21 @@ article .album_data {
 .headings h1 {
     font-size: 3.5vw;
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .headings h2 {
     font-size: 2.3vw;
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*headings*/
 
 .Musicians {
     font-size: var(--font_size);
+    font-family: var(--font-roboto);
+    line-height: var(--line-height);
 }
 
 .Musicians p {
@@ -115,6 +134,8 @@ article .album_data {
 
 .album_description {
     font-size: var(--font_size);
+    font-family: var(--font-roboto);
+    line-height: var(--line-height);
 }
 
 /*Images*/
@@ -151,7 +172,7 @@ article .album_data {
 article .song_list {
     grid-row: 2;
     grid-column: 5 / 8;
-    gap: 5px;
+    gap: 10px;
     display: flex;
 }
 
@@ -159,8 +180,10 @@ article .song_list {
 .song_list>div {
     background-color: #5d2f6f;
     color: var(--color_anecdots_first);
+    font-family: var(--font-roboto);
     flex: 1;
     padding-top: 8px;
+    box-sizing: border-box;
 }
 
 .one {
@@ -170,12 +193,13 @@ article .song_list {
 
 .list h2 {
     font-size: 2vw;
-    margin: 4px 0px -12px 24px;
+    margin: 4px 0px -12px 10px;
 }
 
 .list ul {
     font-size: var(--font_size);
     list-style-type: decimal;
+    padding-left: 25px;
 }
 
 .two {
@@ -184,8 +208,7 @@ article .song_list {
 
 /*side one and two*/
 
-
-#first_album .anecdotes {
+.anecdotes {
     grid-row: 3;
     grid-column: 1 / 8;
 
@@ -194,24 +217,35 @@ article .song_list {
     gap: 5px;
     list-style-type: none;
     font-size: var(--font_size);
+    font-family: var(--font-roboto);
     text-shadow: 0px 0px 1px;
     padding: 0;
     margin: 0;
+    line-height: 1.4;
+}
+
+#first_album .anecdotes {
     color: #5d2f6f;
 }
 
-/* articale nr 1*/
-.anecdotes .top_right_90 {
-    background-color: var(--color_anecdots_first);
-    border-radius: 20px 0 20px 20px;
-    padding: 40px 20px;
+.anecdotes>li {
+    display: flex;
+    align-items: center;
 }
 
-.anecdotes .two_wide {
+/* articale nr 1*/
+.top_right_90 {
+    background-color: var(--color_anecdots_first);
+    border-radius: 20px 0 20px 20px;
+    padding: 30px 10px;
+
+}
+
+.two_wide {
     grid-column: 3 / span 2;
     background-color: var(--color_anecdots_first);
     border-radius: 20px 20px 20px 0;
-    padding: 57px 20px;
+    padding: 0 10px;
 }
 
 .anecdotes .image {
@@ -220,14 +254,16 @@ article .song_list {
     border-radius: 0 20px 20px 0;
     background-image: url("images/lil\'c\(producer\).jpg");
     background-size: cover;
-    text-align: start;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 17px;
 }
 
-.anecdotes .bottom_right_90 {
+.bottom_right_90 {
     grid-column: 6;
     background-color: var(--color_anecdots_first);
     border-radius: 20px 20px 0 20px;
-    padding: 40px 20px;
+    padding: 0 10px;
 }
 
 .anecdotes .empty {
@@ -235,25 +271,18 @@ article .song_list {
 }
 
 /* article nr 2*/
+#second_album {
+    margin-bottom: 11vh;
+}
 
 #second_album .song_list>div {
     background-color: #f3dd41;
-    margin: 5px;
     color: #c35666;
     flex: 1;
+    box-sizing: border-box;
 }
 
 #second_album .anecdotes {
-    grid-row: 3;
-    grid-column: 1 / 8;
-
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 5px;
-    list-style-type: none;
-    font-size: var(--font_size);
-    padding: 0;
-    margin: 0;
     color: #f3dd41;
 }
 
@@ -261,31 +290,232 @@ article .song_list {
     grid-column: span 2;
     background-color: #c35666;
     border-radius: 20px 20px 20px 0;
-    padding: 42px 14px;
+    padding: 0 10px;
 }
 
 .anecdotes .top_left_90 {
     background-color: #c35666;
     border-radius: 0 20px 20px 20px;
-    padding: 40px 20px;
+    padding: 30px 10px;
 }
 
 .anecdotes .middle {
     grid-column: span 2;
     border-radius: 0 20px 20px 20px;
-    padding: 57px 20px;
+    padding: 10px 17px;
     background-image: url("images/tainy\(producer\).jpg");
     background-size: cover;
+    display: flex;
+    align-items: flex-end;
 
 }
 
 .anecdotes .far_right {
     background-color: #c35666;
     border-radius: 20px 20px 0 20px;
-    padding: 40px 20px;
+    padding: 30px 10px;
 }
 
 
 footer {
-    color: white;
+    color: #ffffffa6;
+    font-family: var(--font-roboto);
+}
+
+@media (min-width: 1111px) {
+    header h1 {
+        font-size: 77px;
+    }
+
+    nav>div {
+        font-size: 24px;
+    }
+
+    .headings h1 {
+        font-size: 39px;
+    }
+
+    .headings h2 {
+        font-size: 25.5px;
+    }
+
+    .Musicians,
+    .album_description,
+    .anecdotes {
+        font-size: 15.5px;
+    }
+
+    .list ul {
+        font-size: 15.5px;
+    }
+
+    .list h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 900px) {
+    header h1 {
+        font-size: 63px;
+    }
+
+    nav>div {
+        font-size: 20px;
+    }
+
+    .headings h1 {
+        font-size: 31.5px;
+    }
+
+    .headings h2 {
+        font-size: 20.5px;
+    }
+
+    .Musicians,
+    .album_description,
+    .anecdotes {
+        font-size: 12.5px;
+    }
+
+    .list ul {
+        font-size: 12.5px;
+    }
+
+    .list h2 {
+        font-size: 17.5px;
+    }
+}
+
+@media (max-width: 800px) {
+    header h1 {
+        font-size: 14vw;
+        text-align: center;
+        line-height: 1.1;
+        margin-bottom: 9vh;
+    }
+
+    nav>div {
+        font-size: 2.5vw;
+    }
+
+    .headings h1 {
+        font-size: 5vw;
+    }
+
+    .headings h2 {
+        font-size: 3vw;
+    }
+
+    .Musicians,
+    .album_description,
+    .anecdotes {
+        font-size: 2vw;
+    }
+
+    .list ul {
+        font-size: vw;
+    }
+
+    .list h2 {
+        font-size: 3vw;
+    }
+
+    article .album_data {
+        grid-row: 2;
+        grid-column: 1 / 8;
+    }
+
+    .headings {
+        margin-bottom: 45px;
+    }
+
+    .Musicians {
+        margin-bottom: 30px;
+    }
+
+    .cover {
+        grid-column: 1 / 5;
+        grid-row: 1;
+    }
+
+    .show_not_hover {
+
+        border-radius: 20px 0 0 20px;
+    }
+
+    .show_hover {
+
+        display: none;
+    }
+
+    article .song_list {
+        grid-row: 1;
+        grid-column: 5 / 8;
+        flex-direction: column;
+    }
+
+    .song_list>div {
+        padding-top: 10px;
+    }
+
+    .one {
+        border-radius: 0 20px 0 0;
+    }
+
+    .two {
+        border-radius: 0 0 20px 0;
+    }
+
+    .anecdotes {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /*article nr 1*/
+    .top_right_90 {
+        border-radius: 20px 0 20px 20px;
+    }
+
+    .two_wide {
+        grid-column: 3 /span 2;
+        border-radius: 20px 20px 20px 0;
+    }
+
+    .anecdotes .image {
+        grid-column: 2;
+        border-radius: 0 20px;
+    }
+
+    .bottom_right_90 {
+        grid-column: 3;
+        border-radius: 20px 20px 0 20px;
+        padding: 15px 10px;
+    }
+
+    /*article nr 1*/
+
+    /*article nr 2*/
+    .anecdotes .far_left {
+        grid-column: span 2;
+        border-radius: 20px 20px 20px 0;
+        padding: 0 10px;
+    }
+
+    .anecdotes .top_left_90 {
+        border-radius: 0 20px 20px 20px;
+        padding: 20px 12px;
+    }
+
+    .anecdotes .middle {
+        grid-column: 2 / span 2;
+        border-radius: 0 20px 20px 20px;
+    }
+
+    .anecdotes .far_right {
+        background-color: #c35666;
+        border-radius: 20px 20px 0 20px;
+        padding: 17px 12px;
+    }
+
+    /*article nr 2*/
 }

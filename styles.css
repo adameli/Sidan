@@ -25,17 +25,17 @@ body {
     --font_size: 1.4vw;
     --font-roboto: "roboto";
     --color_anecdots_first: #f4b04a;
-    --line-height: 1.4;
+    --line-height: 1.2;
 }
 
 .container {
-    padding: 70px 40px 30px 40px;
+    padding: 70px 30px 30px 30px;
 }
 
 .outerbox {
     background-color: rgba(0, 0, 0, 0.37);
     border-radius: var(--space);
-    padding: 10px 20px;
+    padding: 10px 15px;
     margin-bottom: 15vh;
 
 }
@@ -57,7 +57,7 @@ nav {
 }
 
 nav>div {
-    flex-grow: 1;
+    flex: 1;
     padding: 17px 20px;
     background-color: rgba(255, 255, 255, 0.452);
     border-radius: 10px;
@@ -78,12 +78,12 @@ nav .marked {
     cursor: pointer;
 }
 
-article.best {
+main>article {
     background-color: rgba(0, 0, 0, 0.301);
     border-radius: var(--space);
     border: 1px solid white;
     margin: 5vh 0;
-    padding: 15px;
+    padding: 15px 10px;
 
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -221,7 +221,7 @@ article .song_list {
     text-shadow: 0px 0px 1px;
     padding: 0;
     margin: 0;
-    line-height: 1.4;
+    line-height: var(--line-height);
 }
 
 #first_album .anecdotes {
@@ -386,7 +386,11 @@ footer {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px) and (min-width: 501px) {
+    .container {
+        padding: 125px 30px 30px 30px;
+    }
+
     header h1 {
         font-size: 14vw;
         text-align: center;
@@ -409,15 +413,16 @@ footer {
     .Musicians,
     .album_description,
     .anecdotes {
-        font-size: 2vw;
+        font-size: 2.2vw;
     }
 
     .list ul {
-        font-size: vw;
+        font-size: 1.8vw;
     }
 
     .list h2 {
         font-size: 3vw;
+        margin: 4px 0px -12px 10px;
     }
 
     article .album_data {
@@ -483,7 +488,7 @@ footer {
 
     .anecdotes .image {
         grid-column: 2;
-        border-radius: 0 20px;
+        border-radius: 0 20px 20px 20px;
     }
 
     .bottom_right_90 {
@@ -518,4 +523,77 @@ footer {
     }
 
     /*article nr 2*/
+
+    footer {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 0;
+    }
+
+    .outerbox {
+        margin-bottom: 0;
+    }
+
+    header h1 {
+        font-size: 15vw;
+        text-align: center;
+        line-height: 1.1;
+        margin-bottom: 6vh;
+        margin-top: 2vh;
+    }
+
+    article.best {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 10px 15px;
+    }
+
+    .cover {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .show_hover {
+        display: none;
+    }
+
+    article .song_list {
+        grid-row: 2;
+        grid-column: 1;
+        flex-direction: row;
+    }
+
+    article .album_data {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    .anecdotes {
+        grid-row: 4;
+        grid-column: 1;
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .top_right_90 {
+        padding: 30px 20px;
+    }
+
+    .two_wide {
+        grid-column: 2 / span 2;
+    }
+
+    .anecdotes .image {
+        grid-column: 2;
+    }
+
+    .bottom_right_90 {
+        grid-column: 3;
+        padding: 30px 20px;
+    }
+
 }

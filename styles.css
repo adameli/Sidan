@@ -9,9 +9,11 @@
 }
 
 @font-face {
-    font-family: "bunge";
-    src: url("fonts/BungeeInline-Regular.ttf");
+    font-family: "porter";
+    src: url("fonts/Hansen\ Shadow.ttf");
 }
+
+
 
 body {
     margin: 0;
@@ -57,7 +59,7 @@ nav {
 
 nav>div {
     flex: 1;
-    padding: 17px 0px;
+    padding: 15px 0px;
     background-color: rgba(255, 255, 255, 0.452);
     border-radius: 10px;
     font-size: 2.2vw;
@@ -65,7 +67,6 @@ nav>div {
 
     display: flex;
     justify-content: center;
-
 }
 
 nav .marked {
@@ -89,7 +90,6 @@ main>article {
 
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-
     gap: 10px;
 }
 
@@ -108,7 +108,7 @@ article .album_data {
 .headings h1 {
     font-size: 3.5vw;
     margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "porter";
 }
 
 .headings h2 {
@@ -184,7 +184,6 @@ article .song_list {
     font-family: var(--font-roboto);
     flex: 1;
     padding-top: 8px;
-    box-sizing: border-box;
 }
 
 .one {

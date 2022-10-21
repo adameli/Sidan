@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Monoton-regular";
-    src: url("Monoton-Regular.ttf");
+    src: url("fonts/Monoton-Regular.ttf");
 }
 
 @font-face {
     font-family: "roboto";
-    src: url("Roboto-Light.ttf");
+    src: url("fonts/Roboto-Light.ttf");
 }
 
 @font-face {
@@ -15,7 +15,7 @@
 
 body {
     margin: 0;
-    background-image: url("images/bad-bunny-backgroundimage.jpg");
+    background-image: url("images/bad-bunny-backgroundimage-desktop.jpg");
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -29,14 +29,14 @@ body {
 }
 
 .container {
-    padding: 70px 30px 30px 30px;
+    padding: 100px 30px 30px 30px;
 }
 
 .outerbox {
     background-color: rgba(0, 0, 0, 0.37);
     border-radius: var(--space);
     padding: 10px 15px;
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
 
 }
 
@@ -46,24 +46,26 @@ header h1 {
     text-shadow: 2px 3px 7px;
     color: white;
     margin: 0;
-    margin-bottom: 4vh;
+    margin-bottom: 6vh;
 }
 
 nav {
     display: flex;
-    text-align: center;
     gap: 5px;
-    margin-bottom: 8vh;
+    margin-bottom: 9vh;
 }
 
 nav>div {
     flex: 1;
-    padding: 17px 20px;
+    padding: 17px 0px;
     background-color: rgba(255, 255, 255, 0.452);
     border-radius: 10px;
     font-size: 2.2vw;
     font-family: var(--font-roboto);
-    flex-basis: 100px;
+
+    display: flex;
+    justify-content: center;
+
 }
 
 nav .marked {
@@ -168,7 +170,7 @@ article .album_data {
 
 /*Images*/
 
-
+/*side one and two*/
 article .song_list {
     grid-row: 2;
     grid-column: 5 / 8;
@@ -176,7 +178,6 @@ article .song_list {
     display: flex;
 }
 
-/*side one and two*/
 .song_list>div {
     background-color: #5d2f6f;
     color: var(--color_anecdots_first);
@@ -188,7 +189,6 @@ article .song_list {
 
 .one {
     border-radius: 0 0 0 20px;
-
 }
 
 .list h2 {
@@ -251,7 +251,7 @@ article .song_list {
 .anecdotes .image {
     grid-column: 5;
     background-color: var(--color_anecdots_first);
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 20px 20px 20px;
     background-image: url("images/lil\'c\(producer\).jpg");
     background-size: cover;
     display: flex;
@@ -387,8 +387,20 @@ footer {
 }
 
 @media (max-width: 800px) and (min-width: 501px) {
+    body {
+        background-image: url("images/bad-bunny-backgroundimage-tablet.jpg");
+    }
+
+    .outerbox {
+        margin-bottom: 10vh;
+    }
+
     .container {
         padding: 125px 30px 30px 30px;
+    }
+
+    #second_album {
+        margin-bottom: 10vh;
     }
 
     header h1 {
@@ -444,12 +456,10 @@ footer {
     }
 
     .show_not_hover {
-
         border-radius: 20px 0 0 20px;
     }
 
     .show_hover {
-
         display: none;
     }
 
@@ -530,6 +540,10 @@ footer {
 }
 
 @media (max-width: 500px) {
+    body {
+        background-image: url("images/bad-bunny-background-phone.jpg");
+    }
+
     .container {
         padding: 0;
     }
@@ -544,6 +558,10 @@ footer {
         line-height: 1.1;
         margin-bottom: 6vh;
         margin-top: 2vh;
+    }
+
+    nav>div {
+        font-size: 3vw;
     }
 
     article.best {
@@ -572,6 +590,16 @@ footer {
         grid-column: 1;
     }
 
+    .Musicians,
+    .album_description {
+        font-size: 15px;
+        margin-top: 35px;
+    }
+
+    .Musicians ul {
+        margin-bottom: 0;
+    }
+
     .anecdotes {
         grid-row: 4;
         grid-column: 1;
@@ -594,6 +622,10 @@ footer {
     .bottom_right_90 {
         grid-column: 3;
         padding: 30px 20px;
+    }
+
+    footer {
+        font-size: 3vw;
     }
 
 }
